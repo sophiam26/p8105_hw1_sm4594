@@ -90,8 +90,8 @@ problem2_df = tibble(
   x = rnorm(500),
   y = rnorm(500),
   vec_logical = x + y > 1,
-  as.numeric(vec_logical),
-  as.factor(vec_logical)
+  vec_numeric = as.numeric(vec_logical),
+  vec_factor = as.factor(vec_logical)
 )
 ```
 
@@ -101,7 +101,10 @@ Make a scatterplot of y vs. x; color points using logical variable:
 ggplot(problem2_df, aes(x = x, y = y, color = vec_logical)) + geom_point()
 ```
 
+Make a scatterplot of y vs. x; color points using numeric variable: 
 
-
+```{r}
+ggplot(problem2_df, aes(x = x, y = y, color = vec_numeric )) + geom_point()
+```
 
 
