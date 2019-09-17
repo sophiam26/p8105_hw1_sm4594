@@ -1,0 +1,31 @@
+---
+title: "p8105_hw1_sm4594"
+author: "Sophia Miller"
+date: "9/15/2019"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+# Problem 1.
+
+Create a data frame comprised of:
+
+* a random sample of size 8 from a standard Normal distribution
+* a logical vector indicating whether elements of the sample are greater than 0
+* a character vector of length 8
+* a factor vector of length 8, with 3 different factor “levels” 
+
+```{r problem1}
+
+problem1_df = tibble(
+  norm_samp = rnorm(8),
+  norm_samp_pos = norm_samp > 0,
+  vec_char = c("This", "is", "the", "first", "data", "science", "homework", "assignment"),
+  vec_factor = factor(c("one", "two", "three", "one", "two", "three", "one", "two"))
+)
+```
+
