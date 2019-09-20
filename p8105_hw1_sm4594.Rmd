@@ -124,3 +124,12 @@ Make third scatterplot of y vs. x; color points using factor variable:
 ```{r}
 ggplot(problem2_df, aes(x = x, y = y, color = vec_factor )) + geom_point()
 ```
+The logical and factor variables have a value of either TRUE or FALSE. Therefore, in the first and third scatterplots, the blue dots represent the cases for which  the statment x + y > 1 is true, and the red dots represent the cases for which the statment x + y > 1 is false. 
+
+The second graph has a color scale ranging from 0 to 1. However, we only see two colors, the dark and light blue representing 0 and 1. This is because 0 and 1 are the only two possible values for the numeric variable; they correspond to the TRUE and FALSE values of the logical variable that was coerced to create the numeric variable.
+
+
+
+
+
+
