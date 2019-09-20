@@ -67,15 +67,23 @@ Problem 2
 
 ```{r convert_multiply}
 
-  as.numeric(
-    pull(problem1_df, norm_samp_pos))*(pull(problem1_df,  norm_samp))
+  log_num = 
+  as.numeric(pull(problem1_df, norm_samp_pos))
 
-  as.factor(
-    pull(problem1_df, norm_samp_pos))*(pull(problem1_df,  norm_samp))
+  log_num*(pull(problem1_df, norm_samp))
 
-  as.numeric(
+  log_fac = 
     as.factor(
-      pull(problem1_df, norm_samp_pos)))*(pull(problem1_df,  norm_samp))
+    pull(problem1_df, norm_samp_pos))
+  
+  log_fac*(pull(problem1_df,  norm_samp))
+  
+  log_fac_num =
+    as.numeric(
+      as.factor(
+      pull(problem1_df, norm_samp_pos)))
+  
+  log_fac_num*(pull(problem1_df,  norm_samp))
 
 ```
 
