@@ -67,23 +67,21 @@ Problem 2
 
 ```{r convert_multiply}
 
-  log_num = 
-  as.numeric(pull(problem1_df, norm_samp_pos))
+  log_num = as.numeric(
+    pull(problem1_df, norm_samp_pos))
 
-  log_num*(pull(problem1_df, norm_samp))
+  log_num * (pull(problem1_df, norm_samp))
 
-  log_fac = 
-    as.factor(
+  log_fac = as.factor(
     pull(problem1_df, norm_samp_pos))
   
-  log_fac*(pull(problem1_df,  norm_samp))
+  log_fac * (pull(problem1_df,  norm_samp))
   
-  log_fac_num =
-    as.numeric(
-      as.factor(
-      pull(problem1_df, norm_samp_pos)))
+  log_fac_num = as.numeric(
+      as.factor(pull
+                (problem1_df, norm_samp_pos)))
   
-  log_fac_num*(pull(problem1_df,  norm_samp))
+  log_fac_num * (pull(problem1_df,  norm_samp))
 
 ```
 
@@ -98,7 +96,6 @@ Create a data frame comprised of:
 * a factor vector created by coercing the above logical vector
 
 ```{r problem2_df}
-
 problem2_df = tibble(
   x = rnorm(500),
   y = rnorm(500),
@@ -108,10 +105,9 @@ problem2_df = tibble(
 )
 ```
 
-Make a scatterplot of y vs. x; color points using logical variable: 
+There are `r nrow(problem2_df)` rows and `r ncol(problem2_df)` columns in the dataset. The mean, median, and standard deviation of x are `r mean(pull(problem2_df, x))`, `r median(pull(problem2_df, x))` and `r sd(pull(problem2_df, x))`, respectively. The proportion of cases for which x + y > 1 is `r mean(pull(problem2_df, vec_numeric))`
 
-The number of rows in the dataset is `r nrow(problem2_df)`
-The number of columns in the dataset is `r ncol(problem2_df)`
+Make a scatterplot of y vs. x; color points using logical variable: 
 
 ```{r}
 ggplot(problem2_df, aes(x = x, y = y, color = vec_logical)) + geom_point()
